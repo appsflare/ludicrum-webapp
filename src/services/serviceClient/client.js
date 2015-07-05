@@ -10,7 +10,6 @@ export class ServiceClient {
 
   contructor(methods) {
     "use strict";
-    var me = this;
     methods.forEach(method=> { this[method.name] = method; });
   }
 
