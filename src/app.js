@@ -1,6 +1,7 @@
-import 'jquery';
-import 'olton/metro-ui-css';
-import 'olton/metro-ui-css/build/css/metro.css!';
+import 'styles/metro.css!';
+import 'styles/components/app.css!';
+import 'github:components/jquery@2.1.4/jquery';
+import 'components/metro';
 
 import {ConventionalViewStrategy} from 'aurelia-framework';
 

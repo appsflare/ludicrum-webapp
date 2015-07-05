@@ -9,10 +9,10 @@ System.config({
   },
   "paths": {
     "*": "dist/*.js",
+    "styles/*.css": "styles/*.css",
     "github:*": "jspm_packages/github/*.js",
     "npm:*": "jspm_packages/npm/*.js",
-    "jquery":'../bower_components/jquery/dist/jquery.js',
-    "github:olton/*": "../bower_components/*.js"
+    "jquery": "jspm_packages/github/components/jquery@2.1.4.js"
   }
 });
 
@@ -30,8 +30,7 @@ System.config({
     "core-js": "npm:core-js@0.9.13",
     "css": "github:systemjs/plugin-css@0.1.11",
     "font-awesome": "npm:font-awesome@4.3.0",
-    "olton/metro-ui-css": "github:olton/metro-ui-css/build/js/metro",
-
+    "olton/Metro-UI-CSS": "github:olton/Metro-UI-CSS@3.0.7",
     "github:aurelia/animator-css@0.2.0": {
       "aurelia-templating": "github:aurelia/templating@0.11.2"
     },
