@@ -1,5 +1,5 @@
 /**
- * Created by developer on 6/7/15.
+ * Created by srinath on 6/7/15.
  */
 import {HttpClient} from 'aurelia-http-client';
 
@@ -15,7 +15,7 @@ export class BaseClient extends HttpClient {
     "use strict";
     var request = super.createRequest(url);
 
-    signClient(request)
+    signClient(request);
 
     return request;
   }

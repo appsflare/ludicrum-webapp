@@ -1,5 +1,5 @@
 /**
- * Created by developer on 6/7/15.
+ * Created by srinath on 6/7/15.
  */
 import {transient} from 'aurelia-framework';
 import {BaseClient} from '../baseClient.js';
