@@ -19,9 +19,8 @@ export class AppRouterConfig {
       config.options.pushState = true;
 
       config.map([
-        {route: ['', 'welcome'], moduleId: './viewmodels/welcome', nav: true, title: 'Welcome'},
+        {route: ['', 'home'], moduleId: './viewmodels/home', nav: true, title: 'home'},
         {route: 'flickr', moduleId: './viewmodels/flickr', nav: true, title: 'Flickr', auth: true},
-        {route: 'customer', moduleId: './viewmodels/customer', nav: true, title: 'CRM', auth: true},
         {route: 'signup', moduleId: './viewmodels/signup', nav: false, title: 'Signup'},
         {route: 'login', moduleId: './viewmodels/login', nav: false, title: 'Login'},
         {route: 'logout', moduleId: './viewmodels/logout', nav: false, title: 'Logout'},

@@ -1,38 +1,12 @@
 <template>
   <require from='./viewmodels/nav-bar'></require>
+  <require from='./elements/side-bar'></require>
 
   <nav-bar router.bind="router"></nav-bar>
   <div class="flex-grid no-responsive-future">
     <div class="row">
       <div class="cell size-x200">
-        <ul role="sidebar" class="sidebar compact margin50 no-margin-left no-margin-bottom main-side-bar">
-          <li><a href="#">
-            <span class="mif-home icon"></span>
-            <span class="title">What to watch</span>
-            <span class="counter"></span>
-          </a></li>
-          <li><a href="#">
-            <span class="mif-profile icon"></span>
-            <span class="title">My channel</span>
-            <span class="counter">0</span>
-          </a></li>
-          <li class="active"><a href="#">
-            <span class="mif-stack3 icon"></span>
-            <span class="title">My subscriptions</span>
-            <span class="counter">0</span>
-          </a></li>
-          <li><a href="#">
-            <span class="mif-history icon"></span>
-            <span class="title">History</span>
-            <span class="counter">0</span>
-          </a></li>
-          <li><a href="#">
-            <span class="mif-stack icon"></span>
-            <span class="title">Watch later</span>
-            <span class="counter">0</span>
-          </a>
-          </li>
-        </ul>
+        <side-bar items.bind="sidebarItems"></side-bar>
       </div>
       <div class="page-host margin50 cell-auto-size">
         <router-view></router-view>

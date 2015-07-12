@@ -16,6 +16,8 @@ ConventionalViewStrategy.convertModuleIdToViewUrl = function (moduleId) {
 @inject(Router, AppHttpClientConfig, AppRouterConfig)
 export class App {
 
+  sidebarItems = null;
+
   constructor(router, httpClientConfig, appRouterConfig) {
     this.router = router;
     this.httpClientConfig = httpClientConfig;
@@ -26,5 +28,11 @@ export class App {
 
     this.httpClientConfig.configure();
     this.appRouterConfig.configure();
+
+    this.sidebarItems = [{icon: 'mif-home', counter: '', title: 'What to watch', href: '/', config: {auth: true}},
+      {icon: 'mif-profile', counter: '', title: 'My channel', href: '/me/channel', config: {auth: true}},
+      {icon: 'mif-stack3', counter: '', title: 'My subscriptions', href: '/me/subscriptions', config: {auth: true}},
+      {icon: 'mif-history', counter: '', title: 'History', href: '/me/history', config: {auth: true}},
+      {icon: 'mif-stack', counter: '', title: 'Watch later', href: '/me/watch-later', config: {auth: true}}];
   }
 }
