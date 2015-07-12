@@ -2,11 +2,12 @@
   <require from='./viewmodels/nav-bar'></require>
   <require from='./elements/side-bar'></require>
 
-  <nav-bar router.bind="router"></nav-bar>
+  <nav-bar router.bind="router" sidebar.bind="sidebar"></nav-bar>
   <div class="flex-grid no-responsive-future">
     <div class="row">
       <div class="cell size-x200">
-        <side-bar items.bind="sidebarItems"></side-bar>
+        <side-bar if.bind="sidebar" items.bind="sidebar.items" toggle.bind="sidebar.toggle"
+                  compact.bind="sidebar.compact"></side-bar>
       </div>
       <div class="page-host margin50 cell-auto-size">
         <router-view></router-view>

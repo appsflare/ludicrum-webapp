@@ -9,12 +9,20 @@ import {AuthService} from 'plugins/auth/authService';
 export class SideBar {
 
   @bindable items = null;
+  @bindable compact = true;
 
   constructor(auth) {
     "use strict";
     this.auth = auth;
     this.items = [];
+
   }
+
+  toggle() {
+    "use strict";
+    this.compact = !this.compact;
+  }
+
 
   get isAuthenticated() {
     "use strict";

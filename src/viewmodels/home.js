@@ -10,13 +10,17 @@ export class Home extends BaseViewModel {
   constructor(auth) {
     "use strict";
     super('What to watch!', auth);
-    items = [];
+    this.items = [];
   }
 
   activate() {
     "use strict";
 
   }
+}
 
-
+export class UpperValueConverter {
+  toView(value) {
+    return value && value.toUpperCase();
+  }
 }

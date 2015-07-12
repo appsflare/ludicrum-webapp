@@ -1,7 +1,13 @@
 <template>
 
-  <ul role="sidebar" class="sidebar compact margin50 no-margin-left no-margin-bottom main-side-bar">
 
+  <ul role="sidebar" class="sidebar ${compact ?'compact':''} margin50 no-margin-left no-margin-bottom main-side-bar">
+    <li click.delegate="toggle()">
+      <a href="#">
+      <span class="icon ${compact ? 'mif-chevron-right':'mif-chevron-left'}">
+      </span><span class="title">${compact?'Expand':'Collapse'}</span>
+      </a>
+    </li>
     <li repeat.for="row of items | authFilter: isAuthenticated" class="${row.isActive ? 'active' : ''}">
       <a href.bind="row.href">
         <span class="${row.icon} icon"></span>
@@ -10,4 +16,5 @@
       </a>
     </li>
   </ul>
+
 </template>
