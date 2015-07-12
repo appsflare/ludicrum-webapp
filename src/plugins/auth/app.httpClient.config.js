@@ -12,7 +12,7 @@ export class AppHttpClientConfig {
     this.config = config.current;
   }
 
-  configure() {
+  configureClient(http) {
     RequestBuilder.addHelper('authTokenHandling', ()=> {
       return (client, processor, message)=> {
         if (this.auth.isAuthenticated() && this.config.httpInterceptor) {
@@ -23,8 +23,12 @@ export class AppHttpClientConfig {
       }
     });
 
-    this.http.configure(x => {
+    http.configure(x => {
       x.authTokenHandling();
     });
+  }
+
+  configure() {
+    this.configureClient(this.http);
   }
 }

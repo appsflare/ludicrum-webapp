@@ -27,7 +27,7 @@ export class Authentication {
 
 
   getToken() {
-    return this.storage.get(this.tokenName);
+    return JSON.parse(this.storage.get(this.tokenName));
   }
 
 
@@ -59,7 +59,7 @@ export class Authentication {
   }
 
   isAuthenticated() {
-    var token = JSON.parse(this.storage.get(this.tokenName));
+    var token = this.getToken();
 
     if (token) {
       var exp = token.exp;
