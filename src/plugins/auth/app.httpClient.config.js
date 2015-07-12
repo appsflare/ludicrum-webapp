@@ -16,15 +16,9 @@ export class AppHttpClientConfig {
     RequestBuilder.addHelper('authTokenHandling', ()=> {
       return (client, processor, message)=> {
         if (this.auth.isAuthenticated() && this.config.httpInterceptor) {
-          var tokenName = this.config.tokenPrefix
-            ? this.config.tokenPrefix + '_' + this.config.tokenName : this.config.tokenName;
-          var token = this.storage.get(tokenName);
-
-          if (this.config.authHeader && this.config.authToken) {
-            token = this.config.authToken + ' ' + token;
+          if (this.config.authHeader) {
+            message.headers.add(this.config.authHeader, this.auth.getPayload());
           }
-
-          message.headers.add(this.config.authHeader, token);
         }
       }
     });

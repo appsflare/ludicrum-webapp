@@ -11,7 +11,6 @@ export class Popup {
     this.url = '';
   }
 
-;
 
   open(url, windowName, options, redirectUri) {
     this.url = url;
@@ -26,7 +25,6 @@ export class Popup {
     return this;
   }
 
-;
 
   eventListener(redirectUri) {
     var self = this;
@@ -68,7 +66,6 @@ export class Popup {
     return promise;
   }
 
-;
 
   pollPopup() {
     var self = this;
@@ -113,7 +110,6 @@ export class Popup {
     return promise;
   }
 
-;
 
   prepareOptions(options) {
     var width = options.width || 500;
@@ -126,7 +122,6 @@ export class Popup {
     }, options);
   }
 
-;
 
   stringifyOptions(options) {
     var parts = [];
@@ -136,5 +131,5 @@ export class Popup {
     return parts.join(',');
   }
 
-;
+
 }

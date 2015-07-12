@@ -1,0 +1,51 @@
+<template>
+
+  <div class="container">
+    <form class="flex-grid" role="form" submit.delegate="submit()">
+
+
+      <div class="row flex-just-center">
+        <div class="grid">
+          <div class="row">
+            <h2 class="text-light row">${heading}</h2>
+
+          </div>
+          <div class="row">
+            <hr class="bg-red full-size"/>
+          </div>
+          <div class="row">
+            <div class="input-control modern text iconic">
+              <input type="text" value.bind="userName"/>
+              <span class="label">Username or Email</span>
+              <span class="informer">Your username or email</span>
+              <span class="placeholder">Username or Email</span>
+              <span class="icon mif-user"></span>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-control modern password iconic" data-role="input">
+              <input type="password" value.bind="password"/>
+              <span class="label">Password</span>
+              <span class="informer">Your password</span>
+              <span class="placeholder">Password</span>
+              <span class="icon mif-lock"></span>
+              <button class="button helper-button reveal"><span class="mif-looks"></span></button>
+            </div>
+          </div>
+          <div class="row">
+            <div class="place-left">
+              <label class="margin10 no-margin-bottom input-control switch">
+                <input type="checkbox">
+                <span class="check"></span>
+                <span class="caption">Remember me</span>
+              </label>
+            </div>
+            <div class="form-actions place-left">
+              <button type="submit" class="button primary">Login</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</template>

@@ -1,25 +1,53 @@
 <template>
+  <require from='../elements/login-form'></require>
   <nav class="app-bar fixed-top" data-role="appbar">
-
-
     <a class="app-bar-element branding" href="/">${router.title}</a>
-    <span class="app-bar-divider"></span>
-    <ul class="app-bar-menu">
-      <li>
-        <a href="" class="dropdown-toggle">Toggle Navigation</a>
-        <ul class="d-menu" data-role="dropdown">
-          <li repeat.for="row of router.navigation" class="${row.isActive ? 'active' : ''}">
-            <a href.bind="row.href">${row.title}</a>
-          </li>
-          <li class="divider"></li>
-        </ul>
-      </li>
-      <li><a href="">Support</a></li>
-      <li><a href="">Help</a></li>
-    </ul>
+
+    <!--<span class="app-bar-divider"></span>-->
+
+
+    <div class="app-bar-element search-box">
+      <div class="input-control text full-size" data-role="input">
+        <input type="text" placeholder="Search"/>
+        <button class="button"><span class="mif-search"></span></button>
+      </div>
+    </div>
+
+    <div class="app-bar-element place-right" if.bind="!isAuthenticated">
+      <a class="dropdown-toggle fg-white"><span class="mif-enter"></span> Enter</a>
+
+      <div class="app-bar-drop-container bg-white fg-dark place-right"
+           data-role="dropdown" data-no-close="true">
+        <div class="padding20">
+          <login-form></login-form>
+        </div>
+      </div>
+    </div>
+
+    <div class="app-bar-element place-right" if.bind="isAuthenticated">
+      <ul class="app-bar-menu">
+        <li>
+          <a href="" class="dropdown-toggle fg-white">Me</a>
+          <ul class="d-menu app-bar-drop-container bg-white fg-dark place-right" data-role="dropdown">
+            <li repeat.for="row of router.navigation | authFilter: isAuthenticated"
+                class="${row.isActive ? 'active' : ''}">
+              <a href.bind="row.href">${row.title}</a>
+            </li>
+            <li class="divider"></li>
+            <li><a href="">Support</a></li>
+            <li><a href="">Help</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <!--<ul if.bind="isAuthenticated" class="nav navbar-nav navbar-right">-->
+    <!--<li><a href="/profile">Profile</a></li>-->
+    <!--<li><a href="/logout">Logout</a></li>-->
+    <!--</ul>-->
 
     <a class="app-bar-element place-right loader" if.bind="router.isNavigating">
-      <span class="fa fa-spinner fa-spin fa-2x"></span>
+      <div data-role="preloader" data-type="ring"></div>
     </a>
 
   </nav>

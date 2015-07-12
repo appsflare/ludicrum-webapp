@@ -15,7 +15,6 @@ export class AuthService {
     this.config = config.current;
   }
 
-;
 
   getMe() {
     var profileUrl = this.auth.getProfileUrl();
@@ -26,13 +25,11 @@ export class AuthService {
       });
   }
 
-;
 
   isAuthenticated() {
     return this.auth.isAuthenticated();
   }
 
-;
 
   signup(displayName, email, password) {
     var signupUrl = this.auth.getSignupUrl();
@@ -56,7 +53,6 @@ export class AuthService {
       });
   }
 
-;
 
   login(email, password) {
 
@@ -74,10 +70,22 @@ export class AuthService {
       .send()
       .then(e => {
         var tokenData = JSON.parse(e.response);
-        tokenData.time = new Date();
-        this.auth.setToken(tokenData);
+        var now = new Date();
+        if (tokenData.expires_in) {
+          now.setMinutes(now.getMinutes() + (tokenData.expires_in / 60));
+        }
+
+        var token = {
+          access_token: tokenData.access_token,
+          refresh_token: tokenData.refresh_token,
+          token_type: tokenData.token_type,
+          exp: now.getTime()
+        };
+
+        this.auth.setToken(token);
+
         console.log("authservice login ok ");
-        return response;
+        return token;
       })
       .catch(err => {
         console.log("error :" + err.content.message);
@@ -86,7 +94,6 @@ export class AuthService {
 
   }
 
-;
 
   logout(redirectUri) {
     console.log("log out service");
@@ -101,8 +108,6 @@ export class AuthService {
         });
     });
   }
-
-;
 
 
   authenticate(name, redirect, userData) {
@@ -125,7 +130,6 @@ export class AuthService {
 
   }
 
-;
 
   unlink(provider) {
     var unlinkUrl = this.config.baseUrl
@@ -152,5 +156,5 @@ export class AuthService {
     }
   }
 
-;
+
 }

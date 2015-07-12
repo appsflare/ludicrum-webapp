@@ -1,29 +1,9 @@
-import {inject} from 'aurelia-framework';
-import {AuthService} from 'plugins/auth/authService';
-@inject(AuthService)
+/**
+ * Created by srinath on 12/7/15.
+ */
+import {inject, bindable} from 'aurelia-framework';
+
 export class Login {
-  heading = 'Login to your account';
-  userName = '';
-  password = '';
 
-  constructor(auth) {
-    "use strict";
-    this.auth = auth;
-  }
-
-  submit() {
-    return this.auth.login(this.userName, this.password);
-  }
-
-  canDeactivate() {
-    if (this.fullName !== this.previousValue) {
-      return confirm('Are you sure you want to leave?');
-    }
-  }
 }
 
-export class UpperValueConverter {
-  toView(value) {
-    return value && value.toUpperCase();
-  }
-}

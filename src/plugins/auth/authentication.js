@@ -15,68 +15,36 @@ export class Authentication {
     return this.config.baseUrl ? authUtils.joinUrl(this.config.baseUrl, this.config.loginUrl) : this.config.loginUrl;
   }
 
-;
 
   getSignupUrl() {
     return this.config.baseUrl ? authUtils.joinUrl(this.config.baseUrl, this.config.signupUrl) : this.config.signupUrl;
   }
 
-;
 
   getProfileUrl() {
     return this.config.baseUrl ? authUtils.joinUrl(this.config.baseUrl, this.config.profileUrl) : this.config.profileUrl;
   }
 
-;
 
   getToken() {
     return this.storage.get(this.tokenName);
   }
 
-;
 
   getPayload() {
-    var token = this.storage.get(this.tokenName);
+    var token = this.getToken();
 
-    if (token && token.split('.').length === 3) {
-      var base64Url = token.split('.')[1];
-      var base64 = base64Url.replace('-', '+').replace('_', '/');
-      return JSON.parse(decodeURIComponent(escape(window.atob(base64))));
-    }
+    return token.token_type + ' ' + token.access_token;
   }
 
-;
 
   setToken(response, redirect) {
 
-    var tokenName = this.tokenName;
-    var accessToken = response && response.access_token;
-    var token;
-
-    if (accessToken) {
-      if (authUtils.isObject(accessToken) && authUtils.isObject(accessToken.data)) {
-        response = accessToken;
-      } else if (authUtils.isString(accessToken)) {
-        token = accessToken;
-      }
+    if (!authUtils.isObject(response)) {
+      throw new Error('response must be an object with properties namely "access_token","token_type" optionally "exp" and "refresh_token".');
     }
 
-    if (!token && response) {
-      token = this.config.tokenRoot && response.content[this.config.tokenRoot]
-        ? response.content[this.config.tokenRoot][this.config.tokenName]
-        : response.content[this.config.tokenName];
-    }
-
-    if (!token) {
-      var tokenPath = this.config.tokenRoot
-        ? this.config.tokenRoot + '.' + this.config.tokenName
-        : this.config.tokenName;
-
-      throw new Error('Expecting a token named "' + tokenPath + '" but instead got: ' + JSON.stringify(response.content));
-    }
-
-
-    this.storage.set(tokenName, token);
+    this.storage.set(this.tokenName, JSON.stringify(response));
 
     if (this.config.loginRedirect && !redirect) {
       window.location.href = this.config.loginRedirect;
@@ -85,31 +53,24 @@ export class Authentication {
     }
   }
 
-;
 
   removeToken() {
     this.storage.remove(this.tokenName);
   }
 
   isAuthenticated() {
-    var token = this.storage.get(this.tokenName);
+    var token = JSON.parse(this.storage.get(this.tokenName));
 
     if (token) {
-      if (token.split('.').length === 3) {
-        var base64Url = token.split('.')[1];
-        var base64 = base64Url.replace('-', '+').replace('_', '/');
-        var exp = JSON.parse(window.atob(base64)).exp;
-        if (exp) {
-          return Math.round(new Date().getTime() / 1000) <= exp;
-        }
-        return true;
+      var exp = token.exp;
+      if (exp) {
+        return new Date().getTime() <= exp;
       }
-      return true;
+      else return true;
     }
     return false;
   }
 
-;
 
   logout(redirect) {
     var tokenName = this.tokenName;
@@ -130,5 +91,5 @@ export class Authentication {
 
   }
 
-;
+
 }

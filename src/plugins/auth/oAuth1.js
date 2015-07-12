@@ -65,7 +65,6 @@ export class OAuth1 {
       });
   }
 
-;
 
   exchangeForToken(oauthData, userData) {
     var data = authUtils.extend({}, userData, oauthData);
@@ -86,7 +85,6 @@ export class OAuth1 {
 
   }
 
-;
 
   buildQueryString(obj) {
     var str = [];
@@ -98,6 +96,5 @@ export class OAuth1 {
     return str.join('&');
   }
 
-;
 
 }
