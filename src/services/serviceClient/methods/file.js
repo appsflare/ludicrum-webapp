@@ -14,7 +14,9 @@ export class FileMethods extends BaseClient {
 
   upload(file) {
     "use strict";
-    return this.post('/file/upload', {file: file});
+    var formData = new FormData();
+    formData.append("file", file);
+    return this.post('/file/upload', formData);
 
   }
 
