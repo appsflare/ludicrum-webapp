@@ -21,12 +21,25 @@ export class AppRouterConfig {
 
       config.map([
         {route: ['', 'home'], moduleId: './viewmodels/home', nav: true, title: 'home'},
-        {route: 'flickr', moduleId: './viewmodels/flickr', nav: true, title: 'Flickr', auth: true},
-        {route: 'signup', moduleId: './viewmodels/signup', nav: false, title: 'Signup'},
+        {route: 'signup', moduleId: './viewmodels/signup', nav: false, title: 'Sign up'},
         {route: 'login', moduleId: './viewmodels/login', nav: false, title: 'Login'},
         {route: 'logout', moduleId: './viewmodels/logout', nav: false, title: 'Logout'},
         {route: 'profile', moduleId: './viewmodels/profile', nav: false, title: 'Profile', auth: true},
-        {route: 'me/upload', moduleId: './viewmodels/user/upload', nav: false, title: 'Upload', auth: true}
+        {route: 'media/upload', moduleId: './viewmodels/media/upload', nav: false, title: 'Upload', auth: true},
+        {
+          route: 'media/create/:fileExtension/:fileName',
+          moduleId: './viewmodels/media/create',
+          nav: false,
+          title: 'Create Media',
+          auth: true
+        },
+        {
+          route: 'media/update/:id',
+          moduleId: './viewmodels/media/update',
+          nav: false,
+          title: 'Update Media',
+          auth: true
+        },
         //{ route: 'child-router',  moduleId: './child-router', nav: true, title:'Child Router' }
       ]);
     };

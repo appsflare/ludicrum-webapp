@@ -4,3 +4,4 @@
 
 export * from './methods/auth';
 export * from './methods/file';
+export * from './methods/media';

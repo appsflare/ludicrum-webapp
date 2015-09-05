@@ -20,5 +20,10 @@ export class FileMethods extends BaseClient {
 
   }
 
+  getThumbStatus(fileName) {
+    "use strict";
+    return this.get(`/file/thumbstatus/${fileName}`);
+  }
+
 
 }
