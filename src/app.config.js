@@ -4,8 +4,8 @@
 var configForDevelopment = {
   baseUrl: 'http://dev-media-api.appsflare.com:1337/',
   loginUrl: '/oauth/token',
-  clientId: 'M24JEOFN1W',
-  clientSecret: 'U0KbUehGim8s1EOBCOszUHEAPx2sFE'
+  clientId: '1ESN8EPG1H',
+  clientSecret: 'hdW1kHE5mqPPBGgcXzlOh9RxCI7DlR'
   //providers: {
   //  google: {
   //    clientId: ''

@@ -13,10 +13,12 @@
       </div>
     </div>
 
+    <a class="app-bar-element branding" href="/media/upload">Upload</a>
+
     <div class="app-bar-element place-right" if.bind="!isAuthenticated">
       <a class="dropdown-toggle fg-white"><span class="mif-enter"></span> Enter</a>
 
-      <div class="app-bar-drop-container bg-white fg-dark place-right"
+      <div class="app-bar-drop-container bg-white fg-dark place-right right10"
            data-role="dropdown" data-no-close="true">
         <div class="padding20">
           <login-form></login-form>
@@ -25,19 +27,15 @@
     </div>
 
     <div class="app-bar-element place-right" if.bind="isAuthenticated">
-      <ul class="app-bar-menu">
-        <li>
-          <a href="" class="dropdown-toggle fg-white">Me</a>
-          <ul class="d-menu app-bar-drop-container bg-white fg-dark place-right" data-role="dropdown">
-            <li repeat.for="row of router.navigation | authFilter: isAuthenticated"
-                class="${row.isActive ? 'active' : ''}">
-              <a href.bind="row.href">${row.title}</a>
-            </li>
-            <li class="divider"></li>
-            <li><a href="">Support</a></li>
-            <li><a href="">Help</a></li>
-          </ul>
+      <a href="" class="dropdown-toggle fg-white">Me</a>
+      <ul class="d-menu app-bar-drop-container bg-white fg-dark place-right right10" data-role="dropdown">
+        <li repeat.for="row of router.navigation | authFilter: isAuthenticated"
+            class="${row.isActive ? 'active' : ''}">
+          <a href.bind="row.href">${row.title}</a>
         </li>
+        <li class="divider"></li>
+        <li><a href="">Support</a></li>
+        <li><a href="">Help</a></li>
       </ul>
     </div>
 

@@ -5,6 +5,9 @@ import {Router} from 'aurelia-router';
 @inject(AuthService, Router)
 export class NavBar {
   @bindable router = null;
+  @bindable sidebar = null;
+
+
 
   constructor(auth, router) {
     "use strict";

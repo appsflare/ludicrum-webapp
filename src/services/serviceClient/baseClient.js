@@ -4,25 +4,20 @@
 import {HttpClient} from 'aurelia-http-client';
 
 export class BaseClient extends HttpClient {
-  constructor() {
+  constructor(name) {
     "use strict";
     super();
-    this.name = '';
-    this.baseUrl = '';
+    this.name = name;
   }
+
 
   createRequest(url) {
     "use strict";
     var request = super.createRequest(url);
 
-    signClient(request);
+    this.signClient(request);
 
     return request;
-  }
-
-  constructUrl(url) {
-    "use strict";
-    return url;
   }
 
   signClient(request) {

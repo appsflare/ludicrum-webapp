@@ -2,20 +2,20 @@
  * Created by srinath on 6/7/15.
  */
 import {transient} from 'aurelia-framework';
-import {BaseClient} from '../baseClient.js';
+import {BaseClient} from '../baseClient';
 
-@transient('APIMethods')
+@transient()
 export class AuthMethods extends BaseClient{
 
-  contstructor(){
+  constructor() {
     "use strict";
-    this.name = 'auth';
+    super('auth');
   }
 
   verify(username, password)
   {
     "use strict";
-    return this.json(this.constructUrl(('')));
+    return this.json("");
 
   }
 
