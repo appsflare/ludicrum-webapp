@@ -1,0 +1,17 @@
+<template>
+  <section class="au-animate margin-20">
+    <h2>${media.title}</h2>
+
+
+    <require from="../elements/mediaPlayer"></require>
+
+    <media-player src.bind="media.videoUrl" poster.bind="media.thumbUrl" type="${media.type}/${media.ext}">
+
+    </media-player>
+
+    <div class="desc">
+      ${media.desc}
+    </div>
+
+  </section>
+</template>

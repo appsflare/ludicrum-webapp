@@ -2,6 +2,7 @@ import {inject} from 'aurelia-framework';
 import  {BaseViewModel} from '../baseViewModel';
 import {AuthService} from 'plugins/auth/authService';
 import {ServiceClient} from 'services/serviceClient/client';
+import 'styles/views/home.css!';
 
 @inject(AuthService, ServiceClient)
 export class Home extends BaseViewModel {

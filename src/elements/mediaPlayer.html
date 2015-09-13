@@ -1,0 +1,11 @@
+<template>
+  <div class="player">
+    <video poster="${poster}" controls crossorigin>
+      <!-- Video files -->
+      <source src.bind="src" type="${type}">
+
+      <!-- Fallback for browsers that don't support the <video> element -->
+      <p>Your browser isn't supported. Old is sometimes not gold anymore, move on buddies!!! </p>
+    </video>
+  </div>
+</template>
