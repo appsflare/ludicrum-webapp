@@ -20,7 +20,7 @@ export class BaseConfig {
       httpInterceptor: true,
       loginOnSignup: true,
       baseUrl: '/',
-      loginRedirect: '/#customer',
+      loginRedirect: '/',
       logoutRedirect: '/',
       signupRedirect: '/login',
       loginUrl: '/auth/login',

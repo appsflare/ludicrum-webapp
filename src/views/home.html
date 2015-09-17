@@ -1,20 +1,15 @@
 <template>
-  <section class="au-animate">
-    <h2>${heading}</h2>
-
+  <section class="au-animate margin-20">
     <div>
-      <div class="cell" repeat.for="item of items">
-        <h5>${item.title}</h5>
+      <h2>${heading}</h2>
 
-        <div class="image-container">
-          <div class="frame"><img title="${item.title}" src.bind="item.thumbUrl"></div>
-          <div class="image-overlay">
-
-            <p>
-              ${item.desc}
-            </p>
+      <div class="media-item cell pull-left" repeat.for="item of items">
+        <a href="/watch/${item.mediaId}">
+          <div>
+            <img class="thumb" title="${item.desc}" src.bind="item.thumbUrl" width="196" height="110">
           </div>
-        </div>
+          <div class="title">${item.title}</div>
+        </a>
       </div>
     </div>
   </section>

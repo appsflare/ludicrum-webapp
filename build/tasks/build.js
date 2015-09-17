@@ -33,10 +33,23 @@ gulp.task('build-html', function () {
 });
 
 
-gulp.task('build-less', function () {
+gulp.task('build-less-components', function () {
   return gulp.src('./src/less/components/*.less')
     .pipe(less())
     .pipe(gulp.dest('./styles/components'));
+});
+
+gulp.task('build-less-views', function () {
+  return gulp.src('./src/less/views/*.less')
+    .pipe(less())
+    .pipe(gulp.dest('./styles/views'));
+});
+
+gulp.task('build-less', function (callback) {
+  return runSequence(
+    ['build-less-components', 'build-less-views'],
+    callback
+  );
 });
 
 // this task calls the clean task (located

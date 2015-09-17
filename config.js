@@ -10,8 +10,8 @@ System.config({
   "paths": {
     "*": "/dist/*.js",
     "styles/*.css": "/styles/*.css",
-    "github:*": "/jspm_packages/github/*.js",
-    "npm:*": "/jspm_packages/npm/*.js",
+    "github:*": "jspm_packages/github/*.js",
+    "npm:*": "jspm_packages/npm/*.js",
     "jquery": "/jspm_packages/github/components/jquery@2.1.4.js",
     "plugins/*": "/dist/plugins/*.js",
     "services/*": "/dist/services/*.js"
@@ -20,7 +20,6 @@ System.config({
 
 System.config({
   "map": {
-    "app.config": "app.config",
     "aurelia-animator-css": "github:aurelia/animator-css@0.2.0",
     "aurelia-bootstrapper": "github:aurelia/bootstrapper@0.12.0",
     "aurelia-dependency-injection": "github:aurelia/dependency-injection@0.7.1",
@@ -34,6 +33,7 @@ System.config({
     "css": "github:systemjs/plugin-css@0.1.13",
     "font-awesome": "npm:font-awesome@4.4.0",
     "olton/Metro-UI-CSS": "github:olton/Metro-UI-CSS@3.0.7",
+    "plyr": "github:selz/plyr@1.3.6",
     "github:aurelia/animator-css@0.2.0": {
       "aurelia-templating": "github:aurelia/templating@0.11.2"
     },

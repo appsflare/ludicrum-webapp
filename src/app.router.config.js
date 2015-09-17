@@ -34,6 +34,13 @@ export class AppRouterConfig {
           auth: true
         },
         {
+          route: 'watch/:mediaId',
+          moduleId: './viewmodels/watch',
+          nav: false,
+          title: 'Watch/Listen media',
+          auth: true
+        },
+        {
           route: 'media/update/:id',
           moduleId: './viewmodels/media/update',
           nav: false,

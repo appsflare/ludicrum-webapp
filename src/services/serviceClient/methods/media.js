@@ -19,6 +19,11 @@ export class MediaMethods extends BaseClient {
     return this.get(this.endpoint);
   }
 
+  getByMediaId(mediaId) {
+    "use strict";
+    return this.get(`${this.endpoint}/byid/${mediaId}`);
+  }
+
   create(media) {
     "use strict";
     return this.post(this.endpoint, media);

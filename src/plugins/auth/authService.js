@@ -59,13 +59,10 @@ export class AuthService {
     var loginUrl = this.auth.getLoginUrl();
     return this.http.createRequest(loginUrl)
       .asPost()
-      //.withHeader('Authorization', 'basic ' + btoa(email + ':' + password))
+      .withHeader('Content-Type', 'application/json')
       .withContent({
         username: email,
-        password: password,
-        client_id: this.config.clientId,
-        client_secret: this.config.clientSecret,
-        grant_type: 'password'
+        password: password
       })
       .send()
       .then(e => {
