@@ -10,8 +10,8 @@ System.config({
   "paths": {
     "*": "/dist/*.js",
     "styles/*.css": "/styles/*.css",
-    "github:*": "/jspm_packages/github/*.js",
-    "npm:*": "/jspm_packages/npm/*.js",
+    "github:*": "jspm_packages/github/*.js",
+    "npm:*": "jspm_packages/npm/*.js",
     "jquery": "/jspm_packages/github/components/jquery@2.1.4.js",
     "plugins/*": "/dist/plugins/*.js",
     "services/*": "/dist/services/*.js"

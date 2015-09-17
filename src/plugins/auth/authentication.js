@@ -12,12 +12,12 @@ export class Authentication {
   }
 
   getLoginUrl() {
-    return this.config.baseUrl ? authUtils.joinUrl(this.config.baseUrl, this.config.loginUrl) : this.config.loginUrl;
+    return this.config.loginUrl;
   }
 
 
   getSignupUrl() {
-    return this.config.baseUrl ? authUtils.joinUrl(this.config.baseUrl, this.config.signupUrl) : this.config.signupUrl;
+    return this.config.signupUrl;
   }
 
 

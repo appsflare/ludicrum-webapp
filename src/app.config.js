@@ -3,9 +3,7 @@
  */
 var configForDevelopment = {
   baseUrl: 'http://dev-media-api.appsflare.com:1337/',
-  loginUrl: '/oauth/token',
-  clientId: '1ESN8EPG1H',
-  clientSecret: 'hdW1kHE5mqPPBGgcXzlOh9RxCI7DlR'
+  loginUrl: '/oauth/token'
   //providers: {
   //  google: {
   //    clientId: ''
@@ -22,9 +20,7 @@ var configForDevelopment = {
 
 var configForProduction = {
   baseUrl: 'http://media-api.appsflare.com/',
-  loginUrl: '/oauth/token',
-  clientId: 'M24JEOFN1W',
-  clientSecret: 'U0KbUehGim8s1EOBCOszUHEAPx2sFE'
+  loginUrl: '/oauth/token'
   //providers: {
   //  google: {
   //    clientId: ''

@@ -1,41 +1,16 @@
 {
   "name": "ludicrum-webapp",
-  "version": "1.0.0",
-  "description": "Ludicrum media portal frontend",
-  "main": "app.js",
-  "client-main": "dist/commonjs/index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "version": "0.13.0",
+  "homepage": "http://aurelia.io",
+  "bugs": {
+    "url": "https://github.com/aurelia/skeleton-navigation/issues"
   },
+  "license": "MIT",
+  "author": "Rob Eisenberg <rob@bluespire.com> (http://robeisenberg.com/)",
+  "main": "dist/commonjs/index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/appsflare/ludicrum-webapp.git"
-  },
-  "keywords": [
-    "ludicrum",
-    "media",
-    "portal",
-    "spa"
-  ],
-  "author": "vjsrinath<me@vjsrinath.com>",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/appsflare/ludicrum-webapp/issues"
-  },
-  "homepage": "https://github.com/appsflare/ludicrum-webapp#readme",
-  "dependencies": {
-    "babel": "^5.8.23",
-    "balanced-match": "^0.2.0",
-    "body-parser": "^1.14.0",
-    "concat-map": "0.0.1",
-    "express": "^4.13.3",
-    "graceful-fs": "^3.0.8",
-    "lodash": "^3.9.3",
-    "minimatch": "^2.0.8",
-    "request": "^2.62.0",
-    "rimraf": "^2.3.4",
-    "source-map": "^0.4.2",
-    "yui": "^3.18.1"
+    "url": "http://github.com/aurelia/skeleton-navigation"
   },
   "devDependencies": {
     "aurelia-tools": "^0.1.3",
@@ -86,5 +61,16 @@
       "babel-runtime": "npm:babel-runtime@^5.1.13",
       "core-js": "npm:core-js@^0.9.4"
     }
+  },
+  "dependencies": {
+    "balanced-match": "^0.2.0",
+    "concat-map": "0.0.1",
+    "express": "^4.13.3",
+    "graceful-fs": "^3.0.8",
+    "lodash": "^3.9.3",
+    "minimatch": "^2.0.8",
+    "rimraf": "^2.3.4",
+    "source-map": "^0.4.2",
+    "yui": "^3.18.1"
   }
 }
