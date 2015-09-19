@@ -20,8 +20,8 @@ gulp.task('build-system', function () {
     .pipe(plumber())
     .pipe(changed(paths.output, {extension: '.js'}))
     .pipe(sourcemaps.init({loadMaps: true}))
-    .pipe(to5(assign({}, compilerOptions, {modules:'system'})))
-    .pipe(sourcemaps.write({includeContent: false, sourceRoot: paths.sourceMapRelativePath }))
+    .pipe(to5(assign({}, compilerOptions, {modules: 'system'})))
+    .pipe(sourcemaps.write({includeContent: false, sourceRoot: paths.sourceMapRelativePath}))
     .pipe(gulp.dest(paths.output));
 });
 
@@ -36,13 +36,13 @@ gulp.task('build-html', function () {
 gulp.task('build-less-components', function () {
   return gulp.src('./src/less/components/*.less')
     .pipe(less())
-    .pipe(gulp.dest('./styles/components'));
+    .pipe(gulp.dest(paths.output + 'styles/components'));
 });
 
 gulp.task('build-less-views', function () {
   return gulp.src('./src/less/views/*.less')
     .pipe(less())
-    .pipe(gulp.dest('./styles/views'));
+    .pipe(gulp.dest(paths.output + '/styles/views'));
 });
 
 gulp.task('build-less', function (callback) {
@@ -56,7 +56,7 @@ gulp.task('build-less', function (callback) {
 // in ./clean.js), then runs the build-system
 // and build-html tasks in parallel
 // https://www.npmjs.com/package/gulp-run-sequence
-gulp.task('build', function(callback) {
+gulp.task('build', function (callback) {
   return runSequence(
     'clean',
     ['build-system', 'build-html', 'build-less'],
