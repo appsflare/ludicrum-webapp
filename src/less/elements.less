@@ -1,6 +1,7 @@
 @import "utilities";
+@import "variables";
 
-nav-bar, login-form, media-player {
+nav-bar, login-form, media-player, media-uploader {
   &:extend(.display-block);
 }
 
@@ -10,5 +11,11 @@ nav-bar, login-form, media-player {
   &.search-box {
     width: 45%;
   }
+}
+
+media-uploader {
+  border-bottom-color: @theme-border-bottom-color;
+  border-bottom-width: 3px;
+  border-bottom-style: solid;
 }
 

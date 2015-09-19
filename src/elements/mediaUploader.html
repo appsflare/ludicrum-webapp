@@ -1,0 +1,18 @@
+<template>
+  <section class="container au-animate">
+    <h2>${heading}</h2>
+
+    <form role="form" submit.delegate="submit()">
+      <div class="form-group">
+        <div class="input-control file" data-role="input">
+          <input type="file" change.delegate="onFileSelected($event)" placeholder="select a media file" id="fn">
+          <button class="button"><span class="mif-folder"></span></button>
+        </div>
+        <button type="submit" disabled.bind="isUploading" class="button ${uploadButtonCss} lighten primary">
+          ${uploadButtonText}
+        </button>
+      </div>
+
+    </form>
+  </section>
+</template>

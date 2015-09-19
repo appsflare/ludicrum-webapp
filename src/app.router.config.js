@@ -25,7 +25,6 @@ export class AppRouterConfig {
         {route: 'login', moduleId: './viewmodels/login', nav: false, title: 'Login'},
         {route: 'logout', moduleId: './viewmodels/logout', nav: false, title: 'Logout'},
         {route: 'profile', moduleId: './viewmodels/profile', nav: false, title: 'Profile', auth: true},
-        {route: 'media/upload', moduleId: './viewmodels/media/upload', nav: false, title: 'Upload', auth: true},
         {
           route: 'media/create/:fileExtension/:fileName',
           moduleId: './viewmodels/media/create',

@@ -1,5 +1,5 @@
 import {inject} from 'aurelia-framework';
-import {BaseViewModel} from '../../baseViewModel';
+import {BaseViewModel} from 'lib/baseViewModel';
 import {AuthService} from 'plugins/auth/authService';
 import {ServiceClient} from 'services/serviceClient/client';
 

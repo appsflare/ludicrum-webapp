@@ -8,8 +8,14 @@ import {Router} from 'aurelia-router';
 import {AppRouterConfig} from 'app.router.config';
 import {AppHttpClientConfig} from 'plugins/auth/app.httpClient.config';
 
+let defaultViewStrategy = ConventionalViewStrategy.convertModuleIdToViewUrl;
+
 ConventionalViewStrategy.convertModuleIdToViewUrl = function (moduleId) {
-  return moduleId.replace('viewmodels', 'views') + '.html';
+  let viewPath = defaultViewStrategy(moduleId).replace('viewmodels', 'views');
+
+  console.log(`view for ${moduleId} is ${viewPath}`);
+
+  return defaultViewStrategy(moduleId).replace('viewmodels', 'views');
 };
 
 @inject(Router, AppHttpClientConfig, AppRouterConfig)
