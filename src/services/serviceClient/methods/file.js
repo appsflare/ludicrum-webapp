@@ -12,11 +12,18 @@ export class FileMethods extends BaseClient {
     super('file');
   }
 
-  upload(file) {
+  upload(file, progressCallback) {
     "use strict";
     var formData = new FormData();
     formData.append("file", file);
-    return this.post('/file/upload', formData);
+
+    let request = this.createRequest('/file/upload')
+      .asPost()
+      .withContent(formData);
+
+    progressCallback && request.withProgressCallback(e=> progressCallback(e, ((e.loaded / e.total) * 100).toFixed(2)));
+
+    return request.send();
 
   }
 

@@ -1,5 +1,6 @@
 <template>
-  <require from='../elements/login-form'></require>
+  <require from='elements/login-form'></require>
+  <require from="elements/mediaUploader"></require>
   <nav class="app-bar fixed-top" data-role="appbar">
     <a class="app-bar-element branding" href="/">${router.title}</a>
 
@@ -13,7 +14,7 @@
       </div>
     </div>
 
-    <a class="app-bar-element branding" href="/media/upload">Upload</a>
+    <a class="app-bar-element branding" data-upload-invoker href="javascript:void(0)">Upload</a>
 
     <div class="app-bar-element place-right" if.bind="!isAuthenticated">
       <a class="dropdown-toggle fg-white"><span class="mif-enter"></span> Enter</a>
@@ -47,6 +48,11 @@
     <a class="app-bar-element place-right loader" if.bind="router.isNavigating">
       <div data-role="preloader" data-type="ring"></div>
     </a>
+
+
+    <media-uploader id="upload-charm" class="bg-lightBlue fg-white text-shadow" invoker="[data-upload-invoker]"
+                    data-role="charm" data-position="top"></media-uploader>
+
 
   </nav>
 </template>

@@ -16,6 +16,7 @@ System.config({
     "jquery": "/jspm_packages/github/components/jquery@2.1.4.js",
     "plugins/*": "/dist/plugins/*",
     "services/*": "/dist/services/*",
+    //"lib/*": "/dist/lib/*",
     "github:aurelia/templating-resources@0.15.2/*": "/jspm_packages/github/aurelia/templating-resources@0.15.2/*.js"
   },
 
