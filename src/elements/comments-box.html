@@ -1,0 +1,33 @@
+<template>
+
+
+  <form role="form" submit.delegate="submit()">
+    <div class="grid">
+      <div class="row">
+
+
+        <div class="input-control textarea full-size">
+      <textarea value.bind="content"
+                placeholder="Put your comments here"> </textarea>
+        </div>
+
+      </div>
+      <div class="row">
+        <button type="submit" class="button place-right lighten primary">Comment</button>
+      </div>
+    </div>
+  </form>
+
+
+  <div class="grid">
+
+    <div class="row" repeat.for="comment of comments">
+
+      <span>${comment.content}</span>
+
+    </div>
+
+  </div>
+
+
+</template>

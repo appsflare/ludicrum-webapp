@@ -3,11 +3,11 @@
  */
 import {inject,All} from 'aurelia-framework';
 import  config from 'app.config';
-import  {AuthMethods, FileMethods, MediaMethods} from './allMethods';
+import  {AuthMethods, FileMethods, MediaMethods, EmotionMethods, CommentMethods} from './allMethods';
 import {AppHttpClientConfig} from 'plugins/auth/app.httpClient.config';
 import {Authentication} from 'plugins/auth/authentication';
 
-@inject(AppHttpClientConfig, Authentication, AuthMethods, FileMethods, MediaMethods)
+@inject(AppHttpClientConfig, Authentication, AuthMethods, FileMethods, MediaMethods, EmotionMethods, CommentMethods)
 export class ServiceClient {
 
 
