@@ -1,0 +1,22 @@
+.list-animator(@enter-animaion,@exit-animation,@animation-delay:25ms,@animation-duration:1s) {
+  &.au-stagger {
+    -webkit-animation-delay: @animation-delay;
+    animation-delay: @animation-delay;
+  }
+  .list-item {
+    &.au-enter {
+      opacity: 0 !important;
+    }
+
+    &.au-enter-active {
+      opacity: 1 !important;
+      -webkit-animation: @enter-animaion @animation-duration;
+      animation: @enter-animaion @animation-duration;
+    }
+
+    &.au-leave-active {
+      -webkit-animation: @exit-animation @animation-duration;
+      animation: @exit-animation @animation-duration;
+    }
+  }
+}

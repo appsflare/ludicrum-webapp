@@ -16,7 +16,6 @@ System.config({
     "jquery": "/jspm_packages/github/components/jquery@2.1.4.js",
     "plugins/*": "/dist/plugins/*",
     "services/*": "/dist/services/*",
-    //"lib/*": "/dist/lib/*",
     "github:aurelia/templating-resources@0.15.2/*": "/jspm_packages/github/aurelia/templating-resources@0.15.2/*.js"
   },
 
@@ -49,6 +48,7 @@ System.config({
     "babel-runtime": "npm:babel-runtime@5.8.24",
     "bootstrap": "github:twbs/bootstrap@3.3.5",
     "core-js": "npm:core-js@0.9.18",
+    "cropperjs": "npm:cropperjs@0.1.1",
     "css": "github:systemjs/plugin-css@0.1.16",
     "fetch": "github:github/fetch@0.9.0",
     "font-awesome": "npm:font-awesome@4.4.0",

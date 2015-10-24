@@ -3,11 +3,11 @@
  */
 import {inject,All} from 'aurelia-framework';
 import  config from 'app.config';
-import  {AuthMethods, FileMethods, MediaMethods, EmotionMethods, CommentMethods} from './allMethods';
+import  {AuthMethods, FileMethods, MediaMethods, EmotionMethods, CommentMethods, ProfileMethods} from './allMethods';
 import {AppHttpClientConfig} from 'plugins/auth/app.httpClient.config';
 import {Authentication} from 'plugins/auth/authentication';
 
-@inject(AppHttpClientConfig, Authentication, AuthMethods, FileMethods, MediaMethods, EmotionMethods, CommentMethods)
+@inject(AppHttpClientConfig, Authentication, AuthMethods, FileMethods, MediaMethods, EmotionMethods, CommentMethods, ProfileMethods)
 export class ServiceClient {
 
 
@@ -72,5 +72,9 @@ export class ServiceClient {
     return this.join(config.baseUrl, endpoint);
   }
 
+  getSignedUrl(endpoint) {
+    "use strict";
+    return this.signUrl(this.getUrl(endpoint));
+  }
 
 }

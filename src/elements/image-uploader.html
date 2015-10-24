@@ -1,0 +1,34 @@
+<template>
+  <section class="container au-animate">
+    <h2>${heading}</h2>
+
+    <div class="image-container bordered">
+      <div class="frame"><img src="${imageUrl}"></div>
+    </div>
+
+    <button class="button link upload-photo" click.delegate="editPhoto()">Upload Photo</button>
+
+    <div data-role="dialog">
+      <h1>Upload photo!!</h1>
+
+      <p>
+
+      <form role="form" submit.delegate="submit()">
+        <div class="form-group">
+          <div class="input-control file" data-role="input">
+            <input type="file" change.delegate="onFileSelected($event)" placeholder="select a media file" id="fn">
+            <button class="button"><span class="mif-folder"></span></button>
+          </div>
+          <div class="profile-picture">
+            <img src="${imageUrl}" alt="Picture">
+          </div>
+          <button type="submit" disabled.bind="isUploading" class="button ${uploadButtonCss} lighten primary">
+            ${uploadButtonText}
+          </button>
+        </div>
+
+      </form>
+      </p>
+    </div>
+  </section>
+</template>

@@ -19,12 +19,16 @@
   </form>
 
 
-  <div class="grid">
+  <div class="grid condensed fade-in-up-list-animator comments-list">
 
-    <div class="row" repeat.for="comment of comments">
+    <div class="row au-animate list-item comment" repeat.for="comment of comments">
 
-      <span>${comment.content}</span>
-
+      <div class="image-container image-format-cycle">
+        <div class="frame">
+          <div class="img-circle" style="background: url(${comment.user|getProfileUrl}) no-repeat;"></div>
+        </div>
+      </div>
+      <span innerHTML.bind="comment.content | emoticonParser"></span>
     </div>
 
   </div>

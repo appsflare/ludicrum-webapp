@@ -59,7 +59,17 @@ if (env == 'development' && gulp.tasks.build) {
   console.log('gulpfile contains build task!, invoking now');
   gulp.start('build', ()=> {
     console.log('build task finished.');
+
+    if (gulp.tasks.hasOwnProperty('watch-only')) {
+      console.log('gulpfile contains watch-only task!, invoking now');
+      gulp.start('watch-only', ()=> {
+        "use strict";
+        console.log('Files have changed!!!');
+      });
+
+    }
     startApp();
+
 
   });
 }

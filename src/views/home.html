@@ -1,9 +1,9 @@
 <template>
-  <section class="au-animate margin-20">
-    <div>
+  <section class="margin-20">
+    <div class="slide-in-right-list-animator au-stagger">
       <h2>${heading}</h2>
 
-      <div class="media-item cell pull-left" repeat.for="item of items">
+      <div class="au-animate media-item list-item cell pull-left" repeat.for="item of items">
         <a href="/watch/${item.mediaId}">
           <div>
             <img class="thumb" title="${item.desc}" src.bind="item.thumbUrl" width="196" height="110">

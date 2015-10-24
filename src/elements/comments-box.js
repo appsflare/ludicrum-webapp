@@ -64,3 +64,19 @@ export class CommentsBox {
       });
   }
 }
+
+@inject(ServiceClient)
+export class GetProfileUrlValueConverter {
+
+  client = null;
+
+  constructor(client) {
+    "use strict";
+    this.client = client;
+  }
+
+  toView(value) {
+    "use strict";
+    return this.client.getSignedUrl(this.client.profile.getProfilePicUrl(value));
+  }
+}

@@ -1,5 +1,6 @@
 @import "utilities";
 @import "variables";
+@import "animators";
 
 nav-bar, login-form, media-player, media-uploader, comments-box {
   &:extend(.display-block);
@@ -17,5 +18,25 @@ media-uploader {
   border-bottom-color: @theme-border-bottom-color;
   border-bottom-width: 3px;
   border-bottom-style: solid;
+}
+
+comments-box {
+  .comments-list {
+    .comment {
+      background-color: #E0DEDE;
+      margin-bottom: 2px !important;
+      padding: 5px;
+      .image-container {
+        width: 50px;
+        .frame {
+          background-color: transparent !important;
+        }
+      }
+      .img-circle {
+        height: 50px;
+        width: 100%;
+      }
+    }
+  }
 }
 

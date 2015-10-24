@@ -7,3 +7,4 @@ export * from './methods/file';
 export * from './methods/media';
 export * from './methods/emotion';
 export * from './methods/comment';
+export * from './methods/profile';
