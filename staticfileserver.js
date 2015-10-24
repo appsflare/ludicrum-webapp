@@ -10,6 +10,7 @@ export default class StaticFilesServer {
   static getMappings() {
     return {
       '/styles': mapDir('/styles'),
+      '/assets': mapDir('/assets'),
       '/dist': mapDir('/dist'),
       '/fonts': mapDir('/fonts'),
       '/jspm_packages': mapDir('/jspm_packages'),

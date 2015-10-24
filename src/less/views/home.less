@@ -1,4 +1,27 @@
 
+.media-items-animator {
+  &.au-stagger {
+    -webkit-animation-delay: 25ms;
+    animation-delay: 25ms;
+  }
+  .media-item {
+    &.au-enter {
+      opacity: 0 !important;
+    }
+
+    &.au-enter-active {
+      opacity: 1 !important;
+      -webkit-animation: slideInRight 1s;
+      animation: slideInRight 1s;
+    }
+
+    &.au-leave-active {
+      -webkit-animation: slideOutRight 1s;
+      animation: slideOutRight 1s;
+    }
+  }
+}
+
 .media-item {
   float: left;
   width: 196px;

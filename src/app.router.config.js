@@ -20,11 +20,18 @@ export class AppRouterConfig {
 
 
       config.map([
-        {route: ['', 'home'], moduleId: './viewmodels/home', nav: true, title: 'home'},
+        {route: ['', 'home'], moduleId: './viewmodels/home', nav: false, title: 'home'},
         {route: 'signup', moduleId: './viewmodels/signup', nav: false, title: 'Sign up'},
         {route: 'login', moduleId: './viewmodels/login', nav: false, title: 'Login'},
         {route: 'logout', moduleId: './viewmodels/logout', nav: false, title: 'Logout'},
-        {route: 'profile', moduleId: './viewmodels/profile', nav: false, title: 'Profile', auth: true},
+
+        {
+          route: 'profile/view/:userId',
+          moduleId: './viewmodels/profile/view',
+          nav: false,
+          title: 'View Profile',
+          auth: true
+        },
         {
           route: 'media/create/:fileExtension/:fileName',
           moduleId: './viewmodels/media/create',

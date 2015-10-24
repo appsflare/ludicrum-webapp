@@ -17,9 +17,9 @@ export class Watch extends BaseViewModel {
     this.client = client;
   }
 
-  activate(params) {
+  load(mediaId) {
     "use strict";
-    return this.client.media.getByMediaId(params.mediaId)
+    return this.client.media.getByMediaId(mediaId)
       .then(res => {
         let media = this.media = res.content;
         let splitted = media.file.split('.');
@@ -31,10 +31,20 @@ export class Watch extends BaseViewModel {
       });
   }
 
-  attached() {
+  activate(params) {
     "use strict";
-    plyr.setup();
+    return this.load(params.mediaId);
   }
+
+  toggleLike() {
+    "use strict";
+    let liked = !this.media.liked;
+    return this.client.emotion.setLike(this.media.id, liked)
+      .then(res => {
+        this.load(this.media.mediaId);
+      });
+  }
+
 }
 
 export class UpperValueConverter {
