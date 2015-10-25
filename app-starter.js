@@ -63,4 +63,3 @@ if (envConfigs.hasOwnProperty(env)) {
     startApp();
   });
 } else startApp();
-
