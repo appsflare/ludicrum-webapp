@@ -4,35 +4,50 @@
 var gulp = require('gulp');
 var bundler = require('aurelia-bundler');
 
+var aurLibs = ['aurelia-bootstrapper',
+  'aurelia-fetch-client',
+  'aurelia-router',
+  'aurelia-animator-css',
+  'github:aurelia/templating-binding',
+  'github:aurelia/templating-resources',
+  'github:aurelia/templating-router',
+  'github:aurelia/loader-default',
+  'github:aurelia/history-browser',
+  'github:aurelia/logging-console'];
+
+var appLibs = [
+  'services/**/*',
+  'plugins/**/*',
+  'lib/**/*'
+  //'*.css!text'
+];
+
 var config = {
   force: true,
   packagePath: '.',
   bundles: {
-    "dist/app-build": {
-      includes: [
-        '*',
-        '*.html!text',
-        '*.css!text',
-        'bootstrap/css/bootstrap.css!text'
-      ],
+    "dist/aurelia": {
+      includes: aurLibs,
       options: {
         inject: true,
         minify: true
       }
     },
-    "dist/aurelia": {
+    "dist/app-framework": {
+      includes: appLibs,
+      excludes: aurLibs,
+      options: {
+        inject: true,
+        minify: true
+      }
+    },
+    "dist/app-build": {
       includes: [
-        'aurelia-bootstrapper',
-        'aurelia-fetch-client',
-        'aurelia-router',
-        'aurelia-animator-css',
-        'github:aurelia/templating-binding',
-        'github:aurelia/templating-resources',
-        'github:aurelia/templating-router',
-        'github:aurelia/loader-default',
-        'github:aurelia/history-browser',
-        'github:aurelia/logging-console'
+        '*',
+        '*.html!text',
+        //'*.css!text'
       ],
+      excludes: aurLibs.concat(appLibs),
       options: {
         inject: true,
         minify: true

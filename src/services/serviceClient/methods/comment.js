@@ -20,7 +20,7 @@ export class CommentMethods extends BaseClient {
     return this.post(this.endpoint, {content: comment.content, contentId: contentId});
   }
 
-  load(contentId, [skip = 0, take = 20]) {
+  load(contentId, skip = 0, take = 20) {
     "use strict";
     return this.get(`${this.endpoint}for/${encodeURIComponent(contentId)}/skip/${skip}/take/${take}`);
   }
