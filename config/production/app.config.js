@@ -1,9 +1,6 @@
 /**
  * Created by srinath on 17/9/15.
  */
-/**
- * Created by srinath on 11/7/15.
- */
 let configForProduction = {
   baseUrl: process.env.API_BASE_URL || 'http://media-api.appsflare.com/',
   loginUrl: '/oauth/token',

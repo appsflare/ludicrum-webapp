@@ -5,7 +5,7 @@ var gulp = require('gulp');
 var bundler = require('aurelia-bundler');
 
 var aurLibs = ['aurelia-bootstrapper',
-  'aurelia-fetch-client',
+  //'aurelia-fetch-client',
   'aurelia-router',
   'aurelia-animator-css',
   'github:aurelia/templating-binding',
