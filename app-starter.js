@@ -8,6 +8,7 @@ import gulp from 'gulp';
 import gulpfile from './gulpfile';
 import request from 'request';
 import bodyParser from 'body-parser';
+import envConfigs from './app.env.config';
 
 let env = process.env.NODE_ENV || 'development';
 
@@ -55,25 +56,11 @@ let startApp = function () {
   });
 };
 
-if (env == 'development' && gulp.tasks.build) {
-  console.log('gulpfile contains build task!, invoking now');
-  gulp.start('build', ()=> {
-    console.log('build task finished.');
 
-    if (gulp.tasks.hasOwnProperty('watch-only')) {
-      console.log('gulpfile contains watch-only task!, invoking now');
-      gulp.start('watch-only', ()=> {
-        "use strict";
-        console.log('Files have changed!!!');
-      });
-
-    }
+if (envConfigs.hasOwnProperty(env)) {
+  var envConfig = envConfigs[env];
+  gulp.start(envConfig.task, envConfig.next, ()=> {
     startApp();
-
-
   });
-}
-else {
-  startApp();
-}
+} else startApp();
 

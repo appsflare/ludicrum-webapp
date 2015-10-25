@@ -12,6 +12,7 @@ export default class StaticFilesServer {
       '/styles': mapDir('/styles'),
       '/assets': mapDir('/assets'),
       '/dist': mapDir('/dist'),
+      'dist': mapDir('/dist'),
       '/fonts': mapDir('/fonts'),
       '/jspm_packages': mapDir('/jspm_packages'),
       '/index.js': mapDir('/index.js'),
