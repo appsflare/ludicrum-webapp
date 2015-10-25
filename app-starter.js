@@ -11,8 +11,11 @@ import bodyParser from 'body-parser';
 import envConfigs from './app.env.config';
 
 let env = process.env.NODE_ENV || 'development';
-
+let started = false;
 let startApp = function () {
+
+  if (started) return;
+  started = true;
 
   let app = express();
 
